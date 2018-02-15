@@ -18,6 +18,32 @@
   <input type="text" placeholder="Nombre2" [(ngModel)]="nombre2" />
   <br>
   <p>Primer nombre es {{nombre1}}</p>
+  <hr>
   <p>Segundo nombre es {{nombre2}}</p>
+  <hr>
   <p>Resultado suma nombres {{nombre1}} {{nombre2}}</p>
+  <hr>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+  <hr>
+  <ul>
+    <!-- Se crea una variable interna con base a una variable externa de un arreglo -->
+    <ng-container *ngFor="let lugar of lugares">
+      <!--*ngIf-->
+       <!-- <li *ngIf="lugar.active">{{lugar.nombre}}</li>-->
+       <li>{{lugar.nombre}}</li>
+    </ng-container>
+    <hr>
+    <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
+      <!-- Directiva de style entre corchetes (directiva de atributo) se aplica css -->
+      <!-- Las evaluaciones se hacen entre llaves por ejemplo lo sua ngStyle-->
+      <li [ngStyle]="{color: (lugar.active)?'black':'gray'}" 
+          [ngClass]="{numero_par: (i+1) % 2}">{{lugar.nombre}} -
+          <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy cerca</span>
+          <span *ngSwitchCase="2" [ngStyle]="{color: 'blue'}">Cerca</span>
+          <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejos</span>
+      </li>
+  </ng-container>
+  </ul>
 </div>
