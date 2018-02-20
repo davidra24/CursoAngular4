@@ -5,13 +5,18 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
+import { ResaltarDirective } from './directives/resaltar.directive';
+import { ContarClicksDirective } from './directives/contar.clicks.directive';
 
 
 
 @NgModule({
   //Todos los componentes ej: home, contact, about us, etc...
   declarations: [
-    AppComponent
+    AppComponent,
+    //se llama al export de la directiva para usarla 
+    ResaltarDirective,
+    ContarClicksDirective
   ],
   imports: [
     BrowserModule,

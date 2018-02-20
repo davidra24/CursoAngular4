@@ -16,17 +16,17 @@ export class AppComponent {
   habilita = false;
   lugares:any = [
     {
-      cercania:1, distancia: 10, active:true,  nombre: 'mercado'
+      plan:"pagado", cercania:1, distancia: 10, active:true,  nombre: 'mercado'
     },{
-      cercania:1, distancia: 1.8, active:false,  nombre: 'papeleria'
+      plan:"gratuito", cercania:1, distancia: 1.8, active:false,  nombre: 'papeleria'
     },{
-      cercania:2, distancia: 5, active:true,  nombre: 'odontologia'
+      plan:"pagado", cercania:2, distancia: 5, active:true,  nombre: 'odontologia'
     }, {
-      cercania:3, distancia: 1, active:true,  nombre: 'veterinaria'
+      plan:"gratuito", cercania:3, distancia: 1, active:true,  nombre: 'veterinaria'
     },{
-      cercania:2, distancia: 35, active:false,  nombre: 'ferreteria'
+      plan:"gratuito", cercania:2, distancia: 35, active:false,  nombre: 'ferreteria'
     },{
-      cercania:3, distancia: 102, active:true,  nombre: 'ploter'
+      plan:"pagado", cercania:3, distancia: 102, active:true,  nombre: 'ploter'
     }];
   lat:number = 5.0178418;
   lng:number = -74.000535;
